@@ -1,16 +1,16 @@
-import {BaseEntity, Column, Entity, PrimaryGeneratedColumn} from "typeorm"
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class CondicaoEntity extends BaseEntity {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    nome: string;
+  @Column()
+  nome: string;
 
-    @Column({ length: 250 })
-    detalhes: string;
+  @Column({ length: 250 })
+  detalhes: string;
 
-    @Column({ default: true })
-    ativo: boolean;
+  @Column({ default: true })
+  ativo: boolean;
 }

@@ -1,14 +1,14 @@
 import {BaseEntity, Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn} from "typeorm";
-import {Pessoa} from "./pessoa.entity";
+import {PessoasEntity} from "./pessoas.entity";
 
 @Entity()
 export class PronturarioEntity extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @OneToOne((type) => Pessoa, {eager: true})
+    @OneToOne((type) => PessoasEntity, {eager: true})
     @JoinColumn()
-    pessoa: Pessoa;
+    pessoa: PessoasEntity;
 
 
 }

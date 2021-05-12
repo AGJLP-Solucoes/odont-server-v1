@@ -6,7 +6,7 @@ import {
     OneToOne,
     PrimaryGeneratedColumn,
 } from 'typeorm';
-import {Pessoa} from './pessoa.entity';
+import {PessoasEntity} from './pessoas.entity';
 
 @Entity()
 export class FuncionarioEntity extends BaseEntity {
@@ -25,6 +25,6 @@ export class FuncionarioEntity extends BaseEntity {
     @Column()
     numeroCRO: number;
 
-    @OneToOne((pessoa) => Pessoa)
-    pessoa: Pessoa;
+    @OneToOne((pessoa) => PessoasEntity)
+    pessoa: PessoasEntity;
 }

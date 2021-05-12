@@ -1,12 +1,5 @@
-import {
-    BaseEntity,
-    Column,
-    Entity,
-    JoinColumn,
-    OneToOne,
-    PrimaryGeneratedColumn,
-} from 'typeorm';
-import {Pessoa} from './pessoa.entity';
+import {BaseEntity, Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn,} from 'typeorm';
+import {PessoasEntity} from "./pessoas.entity";
 
 @Entity()
 export class PacienteEntity extends BaseEntity {
@@ -16,7 +9,7 @@ export class PacienteEntity extends BaseEntity {
     @Column({length: '3'})
     tipoSanguineo: string;
 
-    @OneToOne((type) => Pessoa, {eager: true})
+    @OneToOne((type) => PessoasEntity, {eager: true})
     @JoinColumn()
-    pessoa: Pessoa;
+    pessoa: PessoasEntity;
 }

@@ -1,10 +1,9 @@
 import { Module } from '@nestjs/common';
-import {PessoaModule} from "./pessoa/pessoa.module";
+import { PessoasModule } from './pessoas/pessoas.module';
+import { ProcedimentosModule } from './procedimentos/procedimentos.module';
 
 @Module({
-    imports: [
-        PessoaModule,
-    ],
+  imports: [PessoasModule, ProcedimentosModule],
+  providers: [],
 })
-
 export class ModulesModule {}
