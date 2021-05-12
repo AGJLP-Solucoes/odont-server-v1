@@ -1,7 +1,7 @@
-import {Entity, Column, PrimaryGeneratedColumn, BaseEntity} from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from 'typeorm';
 
 @Entity()
-export class Pessoa extends BaseEntity {
+export class PessoasEntity extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -18,7 +18,7 @@ export class Pessoa extends BaseEntity {
   email: string;
 
   @Column()
-  cellular: number;
+  celular: number;
 
   @Column({ default: true })
   ativo: boolean;

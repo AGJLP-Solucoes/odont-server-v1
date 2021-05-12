@@ -2,7 +2,7 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 require("dotenv").config();
 
 class ConfigService {
-  constructor(private env: { [k: string]: string | undefined }) {}
+  constructor(private env: { [k: string]: string | undefined }) { }
 
   public ensureValues(keys: string[]) {
     keys.forEach((k) => this.getValue(k, true));
