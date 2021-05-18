@@ -11,12 +11,20 @@ export class CondicoesService {
     }
   }
 
-  findAll() {
-    return `This action returns all condicoes`;
+  async findAll() {
+    try {
+      return await CondicaoEntity.find();
+    } catch (err) {
+      throw new HttpException('Error creating article', HttpStatus.INTERNAL_SERVER_ERROR);
+    }
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} condicoe`;
+  async findOne(id: number) {
+    try {
+      return await CondicaoEntity.findOne(id);
+    } catch (err) {
+      throw new HttpException('Error creating article', HttpStatus.INTERNAL_SERVER_ERROR);
+    }
   }
 
   async update(id: number, condicao: CondicaoEntity) {

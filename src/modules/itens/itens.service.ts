@@ -11,12 +11,20 @@ export class ItensService {
     }
   }
 
-  findAll() {
-    return `This action returns all itens`;
+  async findAll() {
+    try {
+      return await ItemEntity.find();
+    } catch (err) {
+      throw new HttpException('Error creating article', HttpStatus.INTERNAL_SERVER_ERROR);
+    }
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} iten`;
+  async findOne(id: number) {
+    try {
+      return await ItemEntity.findOne(id);
+    } catch (err) {
+      throw new HttpException('Error creating article', HttpStatus.INTERNAL_SERVER_ERROR);
+    }
   }
 
   async update(id: number, item: ItemEntity) {
