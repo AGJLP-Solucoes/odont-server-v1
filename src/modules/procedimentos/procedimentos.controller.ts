@@ -12,7 +12,7 @@ import { ProcedimentoEntity } from '../../entities/procedimento.entity';
 
 @Controller('procedimentos')
 export class ProcedimentosController {
-  constructor(private readonly procedimentosService: ProcedimentosService) {}
+  constructor(private readonly procedimentosService: ProcedimentosService) { }
 
   @Post()
   create(@Body() procedimento: ProcedimentoEntity) {

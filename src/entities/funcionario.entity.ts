@@ -13,9 +13,6 @@ export class FuncionarioEntity extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({ length: '3' })
-    tipoSanguineo: string;
-
     @Column({ default: false })
     atende: boolean;
 
@@ -25,6 +22,7 @@ export class FuncionarioEntity extends BaseEntity {
     @Column()
     numeroCRO: number;
 
-    @OneToOne((pessoa) => PessoasEntity)
+    @OneToOne((type) => PessoasEntity, { eager: true })
+    @JoinColumn()
     pessoa: PessoasEntity;
 }
