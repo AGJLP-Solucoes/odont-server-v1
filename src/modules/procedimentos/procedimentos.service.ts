@@ -3,14 +3,11 @@ import { ProcedimentoEntity } from '../../entities/procedimento.entity';
 
 @Injectable()
 export class ProcedimentosService {
-    async create(processedimento: ProcedimentoEntity) {
+    async create(procedimento: ProcedimentoEntity) {
         try {
-            return await ProcedimentoEntity.create(processedimento);
+            return await ProcedimentoEntity.save(procedimento);
         } catch (err) {
-            throw new HttpException(
-                'Error creating article',
-                HttpStatus.INTERNAL_SERVER_ERROR,
-            );
+            throw new HttpException('Error creating article', HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

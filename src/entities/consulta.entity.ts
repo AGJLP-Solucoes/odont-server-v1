@@ -10,6 +10,7 @@ import {
 import { FuncionarioEntity } from "./funcionario.entity";
 import { ItemEntity } from "./item.entity";
 import { PacienteEntity } from "./paciente.entity";
+import { ProcedimentoEntity } from "./procedimento.entity";
 
 
 @Entity()
@@ -40,4 +41,8 @@ export class ConsultaEntity extends BaseEntity {
   @ManyToMany((type) => ItemEntity, { eager: true })
   @JoinTable()
   itens: ItemEntity[];
+
+  @ManyToMany((type) => ProcedimentoEntity, { eager: true })
+  @JoinTable()
+  procedimentos: ProcedimentoEntity[];
 }
