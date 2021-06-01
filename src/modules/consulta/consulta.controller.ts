@@ -21,7 +21,7 @@ export class ConsultaController {
     return this.consultaService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Put(':id')
   update(@Param('id') id: string, @Body() updateConsulta: ConsultaEntity) {
     return this.consultaService.update(+id, updateConsulta);
   }

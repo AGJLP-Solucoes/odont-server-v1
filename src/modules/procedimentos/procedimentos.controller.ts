@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Put,
 } from '@nestjs/common';
 import { ProcedimentosService } from './procedimentos.service';
 import { ProcedimentoEntity } from '../../entities/procedimento.entity';
@@ -29,7 +30,7 @@ export class ProcedimentosController {
     return this.procedimentosService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Put(':id')
   update(@Param('id') id: string, @Body() procedimento: ProcedimentoEntity) {
     return this.procedimentosService.update(+id, procedimento);
   }

@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Put } from '@nestjs/common';
 import { PronturarioEntity } from 'src/entities/pronturario.entity';
 import { ProntuarioService } from './prontuario.service';
 
@@ -21,7 +21,7 @@ export class ProntuarioController {
     return this.prontuarioService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Put(':id')
   update(@Param('id') id: string, @Body() updateProntuario: PronturarioEntity) {
     return this.prontuarioService.update(+id, updateProntuario);
   }
